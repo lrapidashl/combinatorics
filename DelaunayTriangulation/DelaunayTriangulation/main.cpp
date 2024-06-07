@@ -8,7 +8,7 @@ auto GetPointsFromStdin()
     double x, y;
     std::vector<Node> nodes;
     while ((std::cin >> x) && (std::cin >> y)) {
-        nodes.emplace_back(x, y);
+        nodes.emplace_back(std::abs(x), std::abs(y));
     }
     return nodes;
 }

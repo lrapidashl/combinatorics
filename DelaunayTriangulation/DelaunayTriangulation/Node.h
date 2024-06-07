@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include <vector>
 class Node
 {
 public:
@@ -17,9 +18,20 @@ public:
 
 	double GetX() const;
 
+	void SetX(double x);
+
 	double GetY() const;
+
+	void SetY(double y);
+
+	std::vector<std::shared_ptr<Node>> GetNodes();
+
+	void AddNodeConnection(const std::shared_ptr<Node>& node);
+
+	void DeleteNodeConnection(const std::shared_ptr<Node>& node);
 private:
 	double m_x = 0;
 	double m_y = 0;
+	std::vector<std::shared_ptr<Node>> m_nodes;
 };
 
